@@ -1,9 +1,9 @@
 import config from "../config";
 import TokenService from "./token-service";
 
-const AuthApiService = {
+const AdminApiService = {
   postUser(user) {
-    return fetch(`${config.API_ENDPOINT}/users`, {
+    return fetch(`${config.API_ENDPOINT}/${config.SECRET_ROUTE}/create`, {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -14,7 +14,7 @@ const AuthApiService = {
     );
   },
   postLogin({ user_name, password }) {
-    return fetch(`${config.API_ENDPOINT}/auth/login`, {
+    return fetch(`${config.API_ENDPOINT}/${config.SECRET_ROUTE}/auth`, {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -25,7 +25,7 @@ const AuthApiService = {
     );
   },
   refreshToken() {
-    return fetch(`${config.API_ENDPOINT}/auth/refresh`, {
+    return fetch(`${config.API_ENDPOINT}/${config.SECRET_ROUTE}/refresh`, {
       method: "PUT",
       headers: {
         authorization: `Bearer ${TokenService.getAuthToken()}`,
@@ -36,4 +36,4 @@ const AuthApiService = {
   },
 };
 
-export default AuthApiService;
+export default AdminApiService;

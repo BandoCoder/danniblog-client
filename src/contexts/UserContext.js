@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import AuthApiService from "../services/auth-api-service";
+import AdminApiService from "../services/auth-api-service";
 import TokenService from "../services/token-service";
 import IdleService from "../services/idle-service";
 
@@ -89,7 +89,7 @@ export class UserProvider extends Component {
   };
 
   fetchRefreshToken = () => {
-    AuthApiService.refreshToken()
+    AdminApiService.refreshToken()
       .then((res) => {
         TokenService.saveAuthToken(res.authToken);
         TokenService.queueCallbackBeforeExpiry(() => {

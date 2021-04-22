@@ -2,4 +2,5 @@
 export default {
   API_ENDPOINT: "/api",
   TOKEN_KEY: "beware-oblivion-is-at-hand",
+  SECRET_ROUTE: "secretRouteCode",
 };
