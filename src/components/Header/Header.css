@@ -1,0 +1,13 @@
+.nav {
+  background-color: gainsboro;
+  padding: 10px 0px;
+}
+
+.navLink {
+  margin: 0px 20px;
+  text-decoration: none;
+}
+
+h1 {
+  font-size: 40px;
+}
