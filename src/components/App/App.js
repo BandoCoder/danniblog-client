@@ -3,6 +3,7 @@ import { Route, Switch } from "react-router-dom";
 import PrivateRoute from "../../routes/PrivateRoute";
 import PublicRoute from "../../routes/PublicRoute";
 import Header from "../Header/Header";
+import Landing from "../Landing/Landing";
 import "./App.css";
 
 export default class App extends Component {
@@ -16,9 +17,16 @@ export default class App extends Component {
 
   renderApp() {
     return (
-      <section className="header">
-        <Header />
-      </section>
+      <>
+        <section className="header">
+          <Header />
+        </section>
+        <section className="content">
+          <Switch>
+            <Route exact path={"/"} component={Landing} />
+          </Switch>
+        </section>
+      </>
     );
   }
 

@@ -47,9 +47,10 @@ export default class Header extends Component {
     return (
       <header>
         <div className="navBar">
-          {this.nav1()}
           <h1>Danni Lee</h1>
-          {this.nav2()}
+          <hr />
+          {this.nav1()}
+          <hr />
         </div>
       </header>
     );
