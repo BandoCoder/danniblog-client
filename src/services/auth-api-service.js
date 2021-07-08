@@ -2,19 +2,19 @@ import config from "../config";
 import TokenService from "./token-service";
 
 const AdminApiService = {
-  postUser(user) {
-    return fetch(`${config.API_ENDPOINT}/${config.SECRET_ROUTE}/create`, {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(user),
-    }).then((res) =>
-      !res.ok ? res.json().then((e) => Promise.reject(e)) : res.json()
-    );
-  },
+  // postUser(user) {
+  //   return fetch(`${config.API_ENDPOINT}/admin/create`, {
+  //     method: "POST",
+  //     headers: {
+  //       "content-type": "application/json",
+  //     },
+  //     body: JSON.stringify(user),
+  //   }).then((res) =>
+  //     !res.ok ? res.json().then((e) => Promise.reject(e)) : res.json()
+  //   );
+  // },
   postLogin({ user_name, password }) {
-    return fetch(`${config.API_ENDPOINT}/${config.SECRET_ROUTE}/auth`, {
+    return fetch(`${config.API_ENDPOINT}/auth/login`, {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -25,7 +25,7 @@ const AdminApiService = {
     );
   },
   refreshToken() {
-    return fetch(`${config.API_ENDPOINT}/${config.SECRET_ROUTE}/refresh`, {
+    return fetch(`${config.API_ENDPOINT}/auth/refresh`, {
       method: "PUT",
       headers: {
         authorization: `Bearer ${TokenService.getAuthToken()}`,
