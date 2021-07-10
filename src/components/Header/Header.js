@@ -9,7 +9,7 @@ export default class Header extends Component {
         <Link className="navLink" to="#">
           Home
         </Link>
-        <Link className="navLink" to="#">
+        <Link className="navLink" to="/blog">
           Blog
         </Link>
         <Link className="navLink" to="#">

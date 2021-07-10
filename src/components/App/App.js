@@ -4,6 +4,7 @@ import PrivateRoute from "../../routes/PrivateRoute";
 import PublicRoute from "../../routes/PublicRoute";
 import Header from "../Header/Header";
 import Landing from "../Landing/Landing";
+import Blog from "../Blog/Blog";
 import "./App.css";
 
 export default class App extends Component {
@@ -17,16 +18,17 @@ export default class App extends Component {
 
   renderApp() {
     return (
-      <>
+      <div>
         <section className="header">
           <Header />
         </section>
         <section className="content">
           <Switch>
             <Route exact path={"/"} component={Landing} />
+            <Route exact path={"/blog"} component={Blog} />
           </Switch>
         </section>
-      </>
+      </div>
     );
   }
 
